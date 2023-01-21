@@ -45,7 +45,7 @@ const installed = run(npm_install);
 check(installed);
 
 fs.writeFile(
-  "./manifest.json",
+  `${project_name}/manifest.json`,
   JSON.stringify(manifest, null, 2),
   function writeJSON(err) {
     if (err) return console.error(err);
