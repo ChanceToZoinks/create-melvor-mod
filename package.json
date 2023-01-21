@@ -1,8 +1,9 @@
 {
-  "name": "melvor-mod-template",
+  "name": "create-melvor-mod",
   "version": "1.0.0",
-  "description": "Typescript mod template package for MelvorIdle. ",
+  "description": "MelvorIdle Typescript mod repo template.",
   "main": "setup.ts",
+  "bin": "./scripts/create_mod_template.cjs",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,10 +11,14 @@
     "zip": "node scripts/zip.cjs",
     "build": "webpack && node scripts/zip.cjs"
   },
-  "files": [
-    "./**/*"
+  "keywords": [
+    "melvor",
+    "melvoridle"
   ],
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChanceToZoinks/create-melvor-mod"
+  },
   "author": "the_real_hagne",
   "license": "ISC",
   "devDependencies": {
