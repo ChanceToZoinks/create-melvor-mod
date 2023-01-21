@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Melvor",
+            "type": "nwjs",
+            "request": "launch",
+            "runtimeExecutable": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Melvor Idle\\Melvor Idle.exe",
+            "webRoot": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Melvor Idle",
+            "runtimeArgs": [
+                "${workspaceRoot}",
+                "--remote-debugging-port=9222"
+            ],
+            "sourceMaps": true,
+            "nwjsVersion": "0.54.0",
+            "port": 9222
+        }
+    ]
+}

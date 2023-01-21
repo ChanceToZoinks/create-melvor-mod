@@ -1,0 +1,4 @@
+{
+  "namespace": "your_namespace_here",
+  "setup": "setup.mjs"
+}
