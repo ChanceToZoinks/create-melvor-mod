@@ -36,7 +36,7 @@ const program = new Command(package_json.name)
   .parse();
 
 const git_clone = `git clone --depth 1 https://github.com/ChanceToZoinks/create-melvor-mod ${project_name}`;
-const npm_install = `cd ${project_name} && rm package.json && mv template_package.json package.json && npm install`;
+const npm_install = `cd ${project_name} && rm -r .git && rm package.json && mv template_package.json package.json && npm install`;
 
 console.log(`Creating new MelvorIdle mod project: ${project_name}`);
 const cloned = run(git_clone);
@@ -50,7 +50,7 @@ const new_package = JSON.parse(
   fs.readFileSync(`${project_name}/package.json`, "utf8")
 );
 new_package.name = project_name;
-if (project_author) new_package.author = project_author;
+new_package.author = project_author;
 
 fs.writeFileSync(
   `${project_name}/package.json`,
