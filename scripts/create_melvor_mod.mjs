@@ -23,13 +23,15 @@ const check = (thing_to_check) => {
 };
 
 let project_name;
+let project_author;
 const program = new Command(package_json.name)
   .version(package_json.version)
-  .arguments("<project-directory> <mod-namespace>")
-  .usage(`${chalk.green("<project-directory> <mod-namespace>")}`)
-  .action((name, namespace) => {
+  .arguments("<project-directory> <mod-namespace> <author>")
+  .usage(`${chalk.green("<project-directory> <mod-namespace> <author>")}`)
+  .action((name, namespace, author) => {
     project_name = name;
     manifest.namespace = namespace;
+    project_author = author;
   })
   .parse();
 
@@ -44,7 +46,22 @@ console.log(`Installing deps for ${project_name}`);
 const installed = run(npm_install);
 check(installed);
 
-fs.writeFile(
+const new_package = JSON.parse(
+  fs.readFileSync(`${project_name}/package.json`, "utf8")
+);
+new_package.name = project_name;
+if (project_author) new_package.author = project_author;
+
+fs.writeFileSync(
+  `${project_name}/package.json`,
+  JSON.stringify(new_package, null, 2),
+  function writeJSON(err) {
+    if (err) return console.error(err);
+    console.log(`Updating package.json file for ${project_name}`);
+  }
+);
+
+fs.writeFileSync(
   `${project_name}/manifest.json`,
   JSON.stringify(manifest, null, 2),
   function writeJSON(err) {
