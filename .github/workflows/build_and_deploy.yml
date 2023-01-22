@@ -9,6 +9,7 @@ on:
 
 jobs:
   build-deploy:
+    if: ${{ github.repository != 'ChanceToZoinks/create-melvor-mod'}}
     if: ${{ startsWith(github.ref, 'refs/tags/v') }}
     runs-on: ubuntu-latest
     permissions:
