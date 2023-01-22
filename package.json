@@ -1,6 +1,6 @@
 {
   "name": "create-melvor-mod",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "MelvorIdle Typescript mod repo template.",
   "main": "setup.ts",
   "bin": "./scripts/create_melvor_mod.mjs",
@@ -22,8 +22,8 @@
   "author": "the_real_hagne",
   "license": "ISC",
   "dependencies": {
-    "commander": "^10.0.0",
-    "chalk": "^5.2.0"
+    "chalk": "^5.2.0",
+    "commander": "^10.0.0"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
@@ -37,6 +37,7 @@
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "jq": "^1.7.2",
     "melvor-types": "github:ChanceToZoinks/melvor-types",
     "prettier": "^2.8.3",
     "style-loader": "^3.3.1",
